@@ -14,13 +14,13 @@ from openai import OpenAI
 # ==========================================
 # 配置区域
 # ==========================================
-API_KEY = os.getenv("DEEPSEEK_API_KEY")
+API_KEY = os.getenv("DEEPSEEK_API_KEY") or "sk-0a6ed103d5794d92bdea64a6c145dddf"
 BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
 MODEL_NAME = os.getenv("DEEPSEEK_MODEL_NAME", "deepseek-chat")
 
-if not API_KEY:
-    print("❌ Error: 请设置环境变量 DEEPSEEK_API_KEY")
-    sys.exit(1)
+# if not API_KEY:
+#     print("❌ Error: 请设置环境变量 DEEPSEEK_API_KEY")
+#     sys.exit(1)
 
 client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
 
